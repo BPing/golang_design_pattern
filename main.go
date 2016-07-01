@@ -1,7 +1,7 @@
 package main
 
 import (
-	"design_pattern/pattern"
+	"github.com/BPing/golang_design_pattern/pattern"
 )
 
 func main() {
