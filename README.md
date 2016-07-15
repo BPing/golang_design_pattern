@@ -6,7 +6,7 @@ Code to achieve the design model with golang
 
 # 设计模式的六大原则
 
-摘自 [Java开发中的23种设计模式详解(转)](http://www.cnblogs.com/maowang1991/archive/2013/04/15/3023236.html)
+摘自 [Java开发中的23种设计模式详解](http://www.cnblogs.com/maowang1991/archive/2013/04/15/3023236.html)
  
  * 1、开闭原则（Open Close Principle）
  
