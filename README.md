@@ -38,3 +38,6 @@ Code to achieve the design model with golang
  * 6、合成复用原则（Composite Reuse Principle）
  
     原则是尽量使用合成/聚合的方式，而不是使用继承。
+
+# 文档
+https://godoc.org/github.com/BPing/golang_design_pattern/pattern
