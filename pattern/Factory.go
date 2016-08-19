@@ -26,10 +26,9 @@ func (p *brushPen) Write() {
 
 //工厂
 type PenFactory struct {
-
 }
 
-func (this PenFactory)Produce(typ string) (pen) {
+func (this PenFactory) Produce(typ string) pen {
 	switch typ {
 	case "pencil":
 		return this.ProducePencil()
@@ -40,10 +39,10 @@ func (this PenFactory)Produce(typ string) (pen) {
 	}
 }
 
-func (PenFactory)ProducePencil() (pen) {
+func (PenFactory) ProducePencil() pen {
 	return new(pencil)
 }
 
-func (PenFactory)ProduceBrushPen() (pen) {
+func (PenFactory) ProduceBrushPen() pen {
 	return new(brushPen)
 }

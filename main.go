@@ -12,7 +12,7 @@ func main() {
 	battery.Use()
 	battery.Charge()
 
-	battery=pattern.NonRechargeableB{}
+	battery = pattern.NonRechargeableB{}
 	battery.Use()
 	battery.Charge()
 

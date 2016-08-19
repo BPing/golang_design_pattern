@@ -14,30 +14,30 @@ type Department struct {
 }
 
 // 批量添加子节点
-func (this *Department)Add(departments... *Department) {
+func (this *Department) Add(departments ...*Department) {
 	for _, department := range departments {
 		department.AddTo(this)
 	}
 }
 
 // 添加到对应的父节点
-func (this *Department)AddTo(parent *Department) {
+func (this *Department) AddTo(parent *Department) {
 	this.Parent = parent
 	parent.add(this)
 }
 
 // 添加子节点
-func (this *Department)add(department *Department) {
+func (this *Department) add(department *Department) {
 	this.List[department.Id] = department
 }
 
 // 查找子节点
-func (this *Department)Find(id string) (department *Department) {
+func (this *Department) Find(id string) (department *Department) {
 	department, ok := this.List[id]
 	if !ok {
 		for _, de := range this.List {
 			department = de.Find(id)
-			if (nil != department) {
+			if nil != department {
 				return
 			}
 		}
@@ -46,14 +46,13 @@ func (this *Department)Find(id string) (department *Department) {
 	return
 }
 
-
 // 移除子节点
-func (this *Department)Remove(id string) (department *Department) {
+func (this *Department) Remove(id string) (department *Department) {
 	department, ok := this.List[id]
 	if !ok {
 		for _, de := range this.List {
 			department = de.Remove(id)
-			if (nil != department) {
+			if nil != department {
 				return
 			}
 		}
@@ -71,14 +70,13 @@ func (this *Department) ReadList() {
 	}
 }
 
-
 // example
 func CompositeTest() {
-	root := &Department{Name:"root", Id:"0010"}
-	children1 := &Department{Name:"network", Id:"00010"}
-	children2 := &Department{Name:"forward", Id:"00011"}
+	root := &Department{Name: "root", Id: "0010"}
+	children1 := &Department{Name: "network", Id: "00010"}
+	children2 := &Department{Name: "forward", Id: "00011"}
 	root.Add(children1, children2)
-	children1.Add(&Department{Name:"network1", Id:"0001010"})
+	children1.Add(&Department{Name: "network1", Id: "0001010"})
 
 	root.Find("0001010").ReadList()
 
@@ -89,5 +87,3 @@ func CompositeTest() {
 	root.ReadList()
 
 }
-
-

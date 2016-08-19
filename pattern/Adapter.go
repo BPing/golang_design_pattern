@@ -12,7 +12,6 @@ import "fmt"
 //   主要分为三类：类的适配器模式、对象的适配器模式、接口的适配器模式
 //
 
-
 //不可充电电池使用接口
 type NonRechargeableBattery interface {
 	Use()
@@ -25,10 +24,10 @@ type RechargeableBattery interface {
 }
 
 //不可充电电池A
-type  NonRechargeableA struct {
+type NonRechargeableA struct {
 }
 
-func (NonRechargeableA)Use() {
+func (NonRechargeableA) Use() {
 	fmt.Println("NonRechargeableA using ")
 }
 
@@ -37,7 +36,6 @@ func (NonRechargeableA)Use() {
 //
 //
 
-
 //对象的适配器模式
 
 //适配可充电电池使用接口
@@ -45,16 +43,14 @@ type AdapterNonToYes struct {
 	NonRechargeableBattery
 }
 
-func (AdapterNonToYes)Charge() {
+func (AdapterNonToYes) Charge() {
 	fmt.Println("AdapterNonToYes Charging")
 	//nothing to do ,just adapt for RechargeableBattery's interface
 }
 
-
 //接口的适配器模式
 
 type RechargeableBatteryAbstract struct {
-
 }
 
 func (RechargeableBatteryAbstract) Use() {
@@ -71,7 +67,6 @@ type NonRechargeableB struct {
 func (NonRechargeableB) Use() {
 	fmt.Println("NonRechargeableB using ")
 }
-
 
 //test
 func AdapterTest() {

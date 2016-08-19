@@ -1,8 +1,8 @@
 package pattern
 
 import (
-	"reflect"
 	"fmt"
+	"reflect"
 )
 
 //
@@ -17,16 +17,15 @@ type Cloneable interface {
 }
 
 type Context struct {
-
 }
 
-func (this *Context)Clone() interface{} {
+func (this *Context) Clone() interface{} {
 	new_obj := (*this)
 	return &new_obj
 }
 
 //结构体基本信息
-func (this *Context)string(typ interface{}) (str string) {
+func (this *Context) string(typ interface{}) (str string) {
 	v := reflect.ValueOf(typ).Elem()
 	str += "Type:" + v.Type().Name() + "\n"
 	for i := 0; i < v.NumField(); i++ {
@@ -42,11 +41,11 @@ type Context1 struct {
 	Context
 }
 
-func (this *Context1)SetUri(uri string) {
+func (this *Context1) SetUri(uri string) {
 	this.Uri = uri
 }
 
-func (this *Context1)String() (str string) {
+func (this *Context1) String() (str string) {
 	return this.string(this)
 }
 
@@ -55,25 +54,24 @@ type Context2 struct {
 	Echo string
 }
 
-func (this *Context2)SetEcho(echo string) {
+func (this *Context2) SetEcho(echo string) {
 	this.Echo = echo
 }
 
-func (this *Context2)String() (str string) {
+func (this *Context2) String() (str string) {
 	return this.string(this)
 }
-
 
 //原型池
 type ContextPool map[string]*Context
 
-func (this *ContextPool)AddContext(key string, val *Context) {
+func (this *ContextPool) AddContext(key string, val *Context) {
 	(*this)[key] = val
 }
 
-func (this *ContextPool)GetContext(key string) *Context {
+func (this *ContextPool) GetContext(key string) *Context {
 	val, ok := (*this)[key]
-	if (ok) {
+	if ok {
 		return val.Clone().(*Context)
 	}
 	return nil

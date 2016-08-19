@@ -12,10 +12,9 @@ type Singleton2 interface {
 }
 
 type singleton2 struct {
-
 }
 
-func (singleton2)SaySomething() {
+func (singleton2) SaySomething() {
 	fmt.Println("Singleton")
 }
 

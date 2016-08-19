@@ -1,8 +1,8 @@
 package pattern
 
 import (
-	"net/http"
 	"fmt"
+	"net/http"
 )
 
 //
@@ -21,24 +21,22 @@ type Client struct {
 	Client *http.Client
 }
 
-func (c *Client)Query(req Request) (resp *http.Response, err error) {
+func (c *Client) Query(req Request) (resp *http.Response, err error) {
 	resp, err = c.Client.Do(req.HttpRequest())
 	return
 }
 
 type CdnRequest struct {
-
 }
 
-func (cdn *CdnRequest)HttpRequest(req Request) (resp *http.Response, err error) {
+func (cdn *CdnRequest) HttpRequest(req Request) (resp *http.Response, err error) {
 	return http.NewRequest("GET", "/cdn", nil)
 }
 
 type LiveRequest struct {
-
 }
 
-func (cdn *LiveRequest)HttpRequest(req Request) (resp *http.Response, err error) {
+func (cdn *LiveRequest) HttpRequest(req Request) (resp *http.Response, err error) {
 	return http.NewRequest("GET", "/live", nil)
 }
 
