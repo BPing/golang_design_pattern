@@ -43,5 +43,5 @@ Code to achieve the design model with golang
 https://godoc.org/github.com/BPing/golang_design_pattern/pattern [![GoDoc](https://godoc.org/github.com/BPing/golang_design_pattern/pattern?status.svg)](https://godoc.org/github.com/BPing/golang_design_pattern/pattern)
 
 # 同类项目（golang）
- [go-pattern](https://github.com/tmrts/go-pattern)
+ [go-pattern](https://github.com/tmrts/go-patterns)
 
