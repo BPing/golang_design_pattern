@@ -13,7 +13,7 @@ import (
 
 //请求接口
 type Request interface {
-	HttpRequest() http.Request
+	HttpRequest() (*http.Request, error)
 }
 
 //客户端
@@ -22,21 +22,22 @@ type Client struct {
 }
 
 func (c *Client) Query(req Request) (resp *http.Response, err error) {
-	resp, err = c.Client.Do(req.HttpRequest())
+	httpreq,_:=req.HttpRequest()
+	resp, err = c.Client.Do(httpreq)
 	return
 }
 
 type CdnRequest struct {
 }
 
-func (cdn *CdnRequest) HttpRequest(req Request) (resp *http.Response, err error) {
+func (cdn *CdnRequest) HttpRequest() (*http.Request,  error) {
 	return http.NewRequest("GET", "/cdn", nil)
 }
 
 type LiveRequest struct {
 }
 
-func (cdn *LiveRequest) HttpRequest(req Request) (resp *http.Response, err error) {
+func (cdn *LiveRequest) HttpRequest() (*http.Request, error) {
 	return http.NewRequest("GET", "/live", nil)
 }
 
