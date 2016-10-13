@@ -62,3 +62,13 @@ func (com *Company)Producing(){
 	// 发布产品
 	 com.MaintenancePeople.Releasing()
 }
+
+func FacadeTest(){
+	com:=&Company{}
+
+	com.Producing()
+
+	// 单独调用某个功能，
+	// 通过公司外观提供的服务
+	com.Testing()
+}
