@@ -1,5 +1,7 @@
 package pattern
 
+import "fmt"
+
 //
 // 迭代器模式（Iterator Pattern）
 //  这种模式用于顺序访问集合对象的元素，不需要知道集合对象的底层表示。
@@ -18,7 +20,7 @@ type Container interface {
 // 数组迭代器
 type ArrayIterator struct {
 	currentIndex int
-	ac           ArrayContainer
+	ac           *ArrayContainer
 }
 
 func (ai *ArrayIterator) HasNext() bool {
@@ -48,9 +50,10 @@ func (ac *ArrayContainer) GetIterator() Iterator {
 
 
 func IteratorTest(){
-	arr:=[]string{"a","b","c","d"}
+	arr:=[]interface{}{"a","b","c","d"}
 	arrayContainer:=&ArrayContainer{arrayData:arr}
-	for iterater:=arrayContainer.GetIterator().(ArrayIterator);iterater.Has {
-		iterator
+	iterator:=arrayContainer.GetIterator()
+	for iterator.HasNext(){
+		fmt.Println(iterator.Next().(string))
 	}
 }
