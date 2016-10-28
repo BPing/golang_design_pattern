@@ -26,6 +26,7 @@
 //   -Singleton.go : 单例模式(C)
 //   -Singleton2.go : 单例模式(C)
 //   -State.go : 状态模式(X)
+//   -Strategy.go : 策略模式(X)
 //   -Visitor.go : 访问者模式(X)
 //
 //
