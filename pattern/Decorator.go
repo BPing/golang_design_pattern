@@ -3,6 +3,7 @@ package pattern
 import (
 	"strings"
 	"fmt"
+	"log"
 )
 
 //
@@ -44,9 +45,31 @@ func(b *BraceMessageBuilderDecorator)Build(messages ... string) string{
 }
 
 
+// 或者
+
+
+type Object func(int) int
+
+func LogDecorate(fn Object) Object {
+	return func(n int) int {
+		log.Println("Starting the execution with the integer", n)
+
+		result := fn(n)
+
+		log.Println("Execution is completed with the result", result)
+
+		return result
+	}
+}
+
+func Double(n int) int {
+	return n * 2
+}
+
+
 // 调试
 func DecoratorTest(){
-         var MB MessageBuilder
+	var MB MessageBuilder
 
 	MB=&BaseMessageBuilder{}
 
@@ -59,4 +82,9 @@ func DecoratorTest(){
 	MB=&BraceMessageBuilderDecorator{MB}
 
 	fmt.Println(MB.Build("hello world"))
+
+
+	//
+	f := LogDecorate(Double)
+	f(5)
 }
