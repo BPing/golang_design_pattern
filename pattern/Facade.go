@@ -8,34 +8,30 @@ import "fmt"
 //
 
 type Coder struct {
-
 }
 
-func (c *Coder)Coding(){
+func (c *Coder) Coding() {
 	fmt.Println("Coding ....")
 }
 
 type Tester struct {
-
 }
 
-func (t *Tester)Testing(){
+func (t *Tester) Testing() {
 	fmt.Println("Testing ....")
 }
 
 type ProductPlanner struct {
-
 }
 
-func (p *ProductPlanner)Planing(){
+func (p *ProductPlanner) Planing() {
 	fmt.Println("Planing ....")
 }
 
 type MaintenancePeople struct {
-
 }
 
-func (m *MaintenancePeople)Releasing(){
+func (m *MaintenancePeople) Releasing() {
 	fmt.Println("Releasing ....")
 }
 
@@ -43,7 +39,7 @@ func (m *MaintenancePeople)Releasing(){
 //  拥有产品策划、程序员、测试人员，运维人员
 //  通过公司这个外观对外提供服务，
 //  而不是直接通过某个类型人员对外服务（虽然最终提供服务的也是某个类型的人员）
-type Company  struct {
+type Company struct {
 	ProductPlanner
 	Coder
 	Tester
@@ -52,19 +48,25 @@ type Company  struct {
 
 // 对外提供生产产品服务
 // 需要各个类型人员合作，但细节不对外公开的
-func (com *Company)Producing(){
+func (com *Company) Producing() {
 	// 策划产品
-	 com.ProductPlanner.Planing()
+	com.ProductPlanner.Planing()
 	// 编码实现
-	 com.Coder.Coding()
+	com.Coder.Coding()
 	// 测试产品
-	 com.Tester.Testing()
+	com.Tester.Testing()
 	// 发布产品
-	 com.MaintenancePeople.Releasing()
+	com.MaintenancePeople.Releasing()
+
+	// 或者
+	//com.Planing()
+	//com.Coding()
+	//com.Testing()
+	//com.Releasing()
 }
 
-func FacadeTest(){
-	com:=&Company{}
+func FacadeTest() {
+	com := &Company{}
 
 	com.Producing()
 
