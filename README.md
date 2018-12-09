@@ -44,4 +44,8 @@ https://godoc.org/github.com/BPing/golang_design_pattern/pattern [![GoDoc](https
 
 # 同类项目（golang）
  [go-pattern](https://github.com/tmrts/go-patterns)
+ 
+ # 
+ 
+ [![Stargazers over time](https://starcharts.herokuapp.com/BPing/golang_design_pattern.svg)](https://starcharts.herokuapp.com/BPing/golang_design_pattern)
 
