@@ -1,6 +1,8 @@
 # golang_design_pattern
 Code to achieve the design model with golang 
 
+ [![Stargazers over time](https://starcharts.herokuapp.com/BPing/golang_design_pattern.svg)](https://starcharts.herokuapp.com/BPing/golang_design_pattern)
+
 # 设计模式
 用golang语言实现设计模式
 
@@ -45,7 +47,7 @@ https://godoc.org/github.com/BPing/golang_design_pattern/pattern [![GoDoc](https
 # 同类项目（golang）
  [go-pattern](https://github.com/tmrts/go-patterns)
  
- # 
+
  
- [![Stargazers over time](https://starcharts.herokuapp.com/BPing/golang_design_pattern.svg)](https://starcharts.herokuapp.com/BPing/golang_design_pattern)
+
 
